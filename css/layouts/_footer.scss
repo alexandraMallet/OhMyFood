@@ -1,0 +1,21 @@
+footer {
+    background-color: $color-background;
+}
+
+.footerList {
+    list-style-type: none;
+}
+
+
+#propose::before {
+    font: var(--fa-font-solid);
+    content: "\f2e7";
+    padding-right: 16px;
+}
+
+#partnership::before {
+    font: var(--fa-font-solid);
+    content:"\f4c4";
+    padding-right: 10px;
+}
+
