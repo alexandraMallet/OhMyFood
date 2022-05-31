@@ -87,7 +87,8 @@
 
 .restaurants {
     background-color: #f2f2f2;
-    margin-top: 50px;
+    margin-top: 70px;
+    height: 1200px;
 
     h2 {
         padding-left: 30px;
@@ -95,15 +96,62 @@
     }
 }
 
+
 .restCart {
     margin-left: 30px;
     margin-right: 30px;
+    margin-bottom: 15px;
     height: auto;
     max-height: 400px;
+    position: relative;
+    box-shadow: 2px 1px 4px 1px lightgray;
+    border-radius: 20px;
 }
 
 .restCart img {
     object-fit: cover;
     width: 100%;
-    height: 150px;
+    height: 175px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+
+.newRest {
+    position:absolute;
+    right: 20px;
+    top: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 30px;
+    background-color: $color-tertiary;
+    color:(darken($color: $color-tertiary, $amount: 40%));
+    @include bold;
+    @include center;
+    
+        p {
+            margin: 0;
+        }
+}
+
+.restInfo {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10px;
+    margin-right: 20px;
+
+        .restText h3 {
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+
+        .restText p {
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+
+        .restIcon {
+            @include center;
+            font-size: x-large;
+        }
 }
