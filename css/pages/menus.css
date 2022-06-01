@@ -1,0 +1,14 @@
+.headerMenu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.restNameMenu {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.restNameMenu i {
+  font-size: x-large;
+}/*# sourceMappingURL=menus.css.map */
