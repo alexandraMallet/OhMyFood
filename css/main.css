@@ -6,6 +6,13 @@ smartphone : 375 */
 
 h1 {
   font-family: Shrikhand;
+  font-size: 32px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 a {
@@ -53,7 +60,7 @@ img {
 }
 
 .locGuide {
-  height: 260px;
+  height: 250px;
   background-color: #f2f2f2;
   text-align: center;
 }
@@ -230,28 +237,46 @@ img {
 } 
 
 */
-.logoHeader {
+header a {
+  position: absolute;
+  top: 25px;
+  left: 30px;
+  font-weight: bold;
+  font-size: x-large;
+}
+
+.imgMenu {
+  margin-top: 0;
+  margin-bottom: -50px;
+  position: relative;
+  z-index: 1;
+}
+.imgMenu img {
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 300px;
+  position: relative;
+  z-index: 2;
 }
 
-.logoHeader img {
-  width: 150px;
-  height: auto;
+.completeMenu {
+  height: 1250px;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  position: relative;
+  z-index: 3;
 }
-
-.headerMenu {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.completeMenu h1 {
+  margin-bottom: 20px;
 }
 
 .restNameMenu {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  padding-right: 50px;
+  padding-top: 20px;
 }
 .restNameMenu i {
   font-size: x-large;
@@ -275,6 +300,7 @@ img {
 }
 
 .dishesCard {
+  height: 80px;
   display: flex;
   justify-content: space-between;
   background-color: white;
@@ -292,6 +318,7 @@ img {
   background-color: white;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
+  width: 100%;
 }
 
 .dishesName {
@@ -307,17 +334,31 @@ img {
 .dishesInfo {
   display: flex;
   justify-content: space-between;
+  width: 100%;
   padding: 15px;
   padding-top: 10px;
 }
 
 .dishesCheck {
-  height: auto;
+  height: 100%;
   width: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #99E2D0;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.dishesCheck__circle {
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dishesCheck__circle i {
   color: #99E2D0;
 }
 
@@ -361,9 +402,10 @@ footer h4 {
 }
 
 .btn {
-  height: 40px;
+  height: 50px;
+  width: 250px;
   background: linear-gradient(to bottom right, #FF79DA, #9356DC);
-  border-radius: 20px;
+  border-radius: 30px;
   border: none;
   color: white;
   padding-left: 20px;
@@ -373,10 +415,11 @@ footer h4 {
 .btn:hover {
   box-shadow: 2px 3px 5px 3px lightgray;
   background: linear-gradient(to bottom right, #ff93e1, #a16be0);
+  cursor: pointer;
 }
-
-.btn_order {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.btn__order {
+  display: block;
+  margin: auto;
+  margin-top: 40px;
+  margin-bottom: 20px;
 }/*# sourceMappingURL=main.css.map */

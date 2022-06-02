@@ -4,10 +4,15 @@
 
 h1{
     font-family: Shrikhand;
+    font-size: 32px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    width: 100%;
+    @include center;
 }
 
 
-a {
+a {    
     display: block;
     text-decoration: none;
     color: black;

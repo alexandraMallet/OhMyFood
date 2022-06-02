@@ -1,7 +1,8 @@
 .btn {
-    height: 40px;
+    height: 50px;
+    width: 250px;
     background: linear-gradient(to bottom right, $color-secondary, $color-primary);
-    border-radius: 20px;
+    border-radius: 30px;
     border: none;
     color:white;
     padding-left: 20px;
@@ -11,10 +12,15 @@
     &:hover {
         box-shadow: 2px 3px 5px 3px lightgray;
         background: linear-gradient(to bottom right, lighten($color: $color-secondary, $amount: 5%), lighten($color: $color-primary, $amount: 5%));
+        cursor: pointer;
+    }
+
+    &__order {
+        display: block;
+        margin: auto;
+        margin-top: 40px;
+        margin-bottom: 20px;
     }
 }
 
 
-.btn_order {
-    @include center;
-}
