@@ -198,7 +198,10 @@ img {
   z-index: 1;
 }
 .restInfo .likeIcon:hover {
-  color: #9356DC;
+  background: linear-gradient(#9356DC, #FF79DA);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
 }
 .restInfo .likeIcon:hover::after {
   opacity: 1;
@@ -215,10 +218,13 @@ img {
   right: 0;
   bottom: 0;
   left: 0;
-  color: #9356DC;
+  background: linear-gradient(#9356DC, #FF79DA);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
   opacity: 0;
   z-index: -1;
-  transition: opacity 1000ms;
+  transition: opacity 500ms;
 }
 
 header a {
@@ -253,17 +259,20 @@ header a {
 }
 .completeMenu h1 {
   margin-bottom: 20px;
+  font-size: 26px;
+  padding-left: 20px;
 }
 
 .restNameMenu {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding-right: 50px;
+  padding-right: 40px;
   padding-top: 20px;
 }
 .restNameMenu i {
   font-size: x-large;
+  padding-left: 30px;
 }
 
 .completeMenu {

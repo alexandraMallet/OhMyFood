@@ -29,6 +29,8 @@
 
     h1 {
         margin-bottom: 20px;
+        font-size: 26px;
+        padding-left: 20px;
     }
 }
 
@@ -36,11 +38,12 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding-right: 50px;
+    padding-right: 40px;
     padding-top: 20px;
 
     i {
         font-size: x-large;
+        padding-left: 30px;
     }
 }
 

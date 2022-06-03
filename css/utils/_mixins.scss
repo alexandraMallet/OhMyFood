@@ -7,3 +7,10 @@
 @mixin bold {
     font-weight: bold;
 }
+
+
+@mixin gradientIcon {
+    background: linear-gradient($color-primary, $color-secondary);
+    background-clip: text;
+    color:transparent;
+}
