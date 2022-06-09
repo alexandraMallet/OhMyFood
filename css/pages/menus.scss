@@ -122,6 +122,13 @@
     padding-top: 10px;
 }
 
+.dishesSide {
+        width: 250px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+}
+
 .dishesCheck {
     position: absolute;
     top:0;
