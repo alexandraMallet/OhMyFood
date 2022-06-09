@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* tablette : 768
 smartphone : 375 */
 *:not(h1) {
@@ -312,15 +313,25 @@ header a {
   background-color: white;
   border-radius: 20px;
   width: 100%;
+  transform: scaleX(1);
 }
 
 .dishesName {
   padding-top: 15px;
   padding-left: 15px;
   font-size: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.dishesName, .dishesPrice {
+.dishesPrice {
+  min-width: 50px;
+  padding-left: 10px;
+}
+
+.dishesName,
+.dishesPrice {
   font-weight: bold;
 }
 
@@ -330,6 +341,12 @@ header a {
   width: 100%;
   padding: 15px;
   padding-top: 10px;
+}
+
+.dishesSide {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .dishesCheck {
@@ -361,22 +378,25 @@ header a {
 .dishesTxt:hover + .dishesCheck {
   transform: scaleX(1);
 }
+.dishesTxt:hover {
+  width: calc(100% - 80px);
+  cursor: pointer;
+}
 
 .dishesCheck {
   transform-origin: 100% 50%;
   transform: scaleX(0);
   transition: transform 500ms;
 }
+.dishesCheck:hover {
+  transform: scaleX(1);
+  cursor: pointer;
+}
+.dishesCheck:hover + .dishesTxt {
+  width: 50px;
+}
 
 /*
-<div class="container">
-    <button class="btn">Transform!</button>
-    <div class="boxes">
-        <div class="boxes__base boxes--rotDegrees">rotate(360deg)</div>
-        <div class="boxes__base boxes--rotTurns">rotate(1turn)</div>
-    </div>
-</div>
-
 
 .btn {
     &:hover + .boxes {
@@ -402,6 +422,125 @@ header a {
     }
 }
 
+LE HTML : 
+<div class="container">
+    <button class="btn">Transform!</button>
+    <div class="boxes">
+        <div class="boxes__base boxes--rotDegrees">rotate(360deg)</div>
+        <div class="boxes__base boxes--rotTurns">rotate(1turn)</div>
+    </div>
+</div>
+
+____________________________________________________________________________________________________________________________________
+
+
+$easing: cubic-bezier(.49,.18,.23,1);
+$width: 33vh;
+$height: 72vh;
+$margin-right: 4vh;
+$wid-marg: $width + $margin-right;
+.card {
+    width: $width;
+    height: $height;
+    overflow: hidden;
+    &:not(:last-child){
+        margin-right: $margin-right;
+    }
+    &--anim {
+        transform: translateX($width-marg);
+        transition: transform 700ms $easing;
+    }
+    &__contents {
+        width: $width;
+        overflow: hidden;
+    &--anim {
+            transform: translateX($wid-marg*-1);
+            transition: transform 700ms $easing;
+        }
+    }
+}
+.btn {
+    &--reveal {
+        &:hover {
+            & + .card {
+                &--anim {
+                    transform: translateX(0);
+                }
+                .card__contents--anim {
+                    transform: translateX(0);
+                }
+            }
+        }
+    }
+}
+
+
+
+</>
+$easing: cubic-bezier(.49,.18,.23,1);
+$width: 33vh;
+$height: 72vh;
+$margin-right: 4vh;
+$wid-marg: $width + $margin-right;
+.card {
+    width: $width;
+    height: $height;
+    overflow: hidden;
+    &:not(:last-child){
+        margin-right: $margin-right;
+    }
+    &--anim {
+        transform: translateX($width-marg);
+        transition: transform 700ms $easing;
+    }   
+    &__contents {
+        width: $width;
+        overflow: hidden;
+    &--anim {
+            transform: translateX($wid-marg*-1);
+            transition: transform 700ms $easing;
+        }
+    }
+    &__block {
+    overflow: hidden;
+    // une boucle créée avec sass qui itère de 1 à 3, en utilisant l'index
+    // comme suffixe pour le nom --anim mod
+    // ainsi que comme valeur pour multiplier la valeur de transition delay
+    @for $i from 1 through 3 {
+        &--anim-# {
+                transform: translateX(-108%);
+                transition: transform 500ms $easing 50ms*$i;
+            }
+        }
+        &:not(:first-child) {
+            margin-top: 1rem;
+        }
+
+}
+.btn {
+    &--reveal {
+        &:hover {
+            & + .card {
+                &--anim {
+                    transform: translateX(0);
+                }
+                .card__contents--anim {
+                    transform: translateX(0);
+                }
+                .card__block--anim {
+                    transform: translateX(0);
+                }
+            }
+        }
+    }
+}
+
+___________________________________________________________________________________________
+
+
+
+
+___________________________________________________________________________________________________________________
 
 
 .btn {
@@ -424,6 +563,8 @@ header a {
         transition: transform 280ms ease-out 50ms;
     }
 }
+
+
 */
 footer {
   height: 200px;

@@ -14,3 +14,10 @@
     background-clip: text;
     color:transparent;
 }
+
+
+@mixin ellipse {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
