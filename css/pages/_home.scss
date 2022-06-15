@@ -37,11 +37,11 @@ $anim-delay: calc($anim-dur / 5);
     display: flex;
     justify-content: space-evenly;
     animation: loader 10000ms 0s forwards;
-    &__bar {
-        height: 70%;
-        width: $size*2;
+    &__btn {
+        height: 250px;
+        width: 250px;
         margin: auto;
-        border-radius: 20px;
+        border-radius: 250px;
         background: linear-gradient($color-secondary, $color-primary);
         animation: loadBars $anim-dur backwards infinite ease-in-out alternate;
         @for $i from 1 through 3 {

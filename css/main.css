@@ -96,24 +96,24 @@ img {
   -webkit-animation: loader 10000ms 0s forwards;
           animation: loader 10000ms 0s forwards;
 }
-.load__bar {
-  height: 70%;
-  width: 6vh;
+.load__btn {
+  height: 250px;
+  width: 250px;
   margin: auto;
-  border-radius: 20px;
+  border-radius: 250px;
   background: linear-gradient(#FF79DA, #9356DC);
   -webkit-animation: loadBars 1000ms backwards infinite ease-in-out alternate;
           animation: loadBars 1000ms backwards infinite ease-in-out alternate;
 }
-.load__bar--1 {
+.load__btn--1 {
   -webkit-animation-delay: 200ms;
           animation-delay: 200ms;
 }
-.load__bar--2 {
+.load__btn--2 {
   -webkit-animation-delay: 400ms;
           animation-delay: 400ms;
 }
-.load__bar--3 {
+.load__btn--3 {
   -webkit-animation-delay: 600ms;
           animation-delay: 600ms;
 }
