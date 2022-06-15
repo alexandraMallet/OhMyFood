@@ -5,22 +5,28 @@ $anim-delay: calc($anim-dur / 5);
 
 @keyframes loader {
     0% {
-        transform: translateX(0);
+        transform: translateY(0);
     }
-    99% {
-        transform: translateX(-450px);
+
+    50% {
+        transform: translateY(-500px);
     }
+
+    75% {
+        transform: translateY(-800px);
+    }
+    
     100% {
-        transform: translateX(-9999px);
+        transform: translateY(-9999px);
         }
 }
 
-@keyframes loadBars {
-    0% {
-        transform: scaleY(0.5);
+@keyframes loadBtn {
+    from {
+        transform: rotate(0 deg);
     }
-    100% {
-        transform: scaleY(1.0);
+    to {
+        transform: rotate(360 deg);
     }
 }
 
@@ -36,19 +42,14 @@ $anim-delay: calc($anim-dur / 5);
     background-color: #f2f2f2;
     display: flex;
     justify-content: space-evenly;
-    animation: loader 10000ms 0s forwards;
+    animation: loader 3s 0s forwards;
     &__btn {
         height: 250px;
         width: 250px;
         margin: auto;
         border-radius: 250px;
         background: linear-gradient($color-secondary, $color-primary);
-        animation: loadBars $anim-dur backwards infinite ease-in-out alternate;
-        @for $i from 1 through 3 {
-            &--#{$i} {
-                animation-delay: $anim-delay * $i;
-            }
-        }
+        animation: loadBtn 400ms linear infinite;
     }
 }
 

@@ -45,41 +45,47 @@ img {
 
 @-webkit-keyframes loader {
   0% {
-    transform: translateX(0);
+    transform: translateY(0);
   }
-  99% {
-    transform: translateX(-450px);
+  50% {
+    transform: translateY(-500px);
+  }
+  75% {
+    transform: translateY(-800px);
   }
   100% {
-    transform: translateX(-9999px);
+    transform: translateY(-9999px);
   }
 }
 
 @keyframes loader {
   0% {
-    transform: translateX(0);
+    transform: translateY(0);
   }
-  99% {
-    transform: translateX(-450px);
+  50% {
+    transform: translateY(-500px);
+  }
+  75% {
+    transform: translateY(-800px);
   }
   100% {
-    transform: translateX(-9999px);
+    transform: translateY(-9999px);
   }
 }
-@-webkit-keyframes loadBars {
-  0% {
-    transform: scaleY(0.5);
+@-webkit-keyframes loadBtn {
+  from {
+    transform: rotate(0 deg);
   }
-  100% {
-    transform: scaleY(1);
+  to {
+    transform: rotate(360 deg);
   }
 }
-@keyframes loadBars {
-  0% {
-    transform: scaleY(0.5);
+@keyframes loadBtn {
+  from {
+    transform: rotate(0 deg);
   }
-  100% {
-    transform: scaleY(1);
+  to {
+    transform: rotate(360 deg);
   }
 }
 .load {
@@ -93,8 +99,8 @@ img {
   background-color: #f2f2f2;
   display: flex;
   justify-content: space-evenly;
-  -webkit-animation: loader 10000ms 0s forwards;
-          animation: loader 10000ms 0s forwards;
+  -webkit-animation: loader 3s 0s forwards;
+          animation: loader 3s 0s forwards;
 }
 .load__btn {
   height: 250px;
@@ -102,20 +108,8 @@ img {
   margin: auto;
   border-radius: 250px;
   background: linear-gradient(#FF79DA, #9356DC);
-  -webkit-animation: loadBars 1000ms backwards infinite ease-in-out alternate;
-          animation: loadBars 1000ms backwards infinite ease-in-out alternate;
-}
-.load__btn--1 {
-  -webkit-animation-delay: 200ms;
-          animation-delay: 200ms;
-}
-.load__btn--2 {
-  -webkit-animation-delay: 400ms;
-          animation-delay: 400ms;
-}
-.load__btn--3 {
-  -webkit-animation-delay: 600ms;
-          animation-delay: 600ms;
+  -webkit-animation: loadBtn 400ms linear infinite;
+          animation: loadBtn 400ms linear infinite;
 }
 
 .myLocation {
