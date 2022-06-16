@@ -44,12 +44,18 @@ $anim-delay: calc($anim-dur / 5);
     justify-content: space-evenly;
     animation: loader 3s 0s forwards;
     &__btn {
+        @include center;
+        color: white;
         height: 250px;
         width: 250px;
         margin: auto;
         border-radius: 250px;
         background: linear-gradient($color-secondary, $color-primary);
         animation: loadBtn 400ms linear infinite;
+
+        & i {
+            font-size: 84px;
+        }
     }
 }
 

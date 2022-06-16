@@ -103,6 +103,10 @@ img {
           animation: loader 3s 0s forwards;
 }
 .load__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
   height: 250px;
   width: 250px;
   margin: auto;
@@ -110,6 +114,9 @@ img {
   background: linear-gradient(#FF79DA, #9356DC);
   -webkit-animation: loadBtn 400ms linear infinite;
           animation: loadBtn 400ms linear infinite;
+}
+.load__btn i {
+  font-size: 84px;
 }
 
 .myLocation {
