@@ -1,3 +1,27 @@
+@keyframes progressDihes {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+.dishesCategory-1 {
+    animation: progressDishes 500ms 500ms;
+}
+
+.dishesCategory-2 {
+    animation: progressDishes 500ms 750ms;
+}
+
+.dishesCategory-3 {
+    animation: progressDishes 500ms 1000ms;
+}
+
+
+
 .imgMenu {
     margin-top: 0;
     margin-bottom: -50px;
@@ -47,7 +71,7 @@
 }
 
 
-.dishesCategory h3 {
+.dishesCatTitle h3 {
     text-transform: uppercase;
     font-weight: 400;
     margin-left: 30px;
