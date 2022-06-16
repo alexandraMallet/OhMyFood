@@ -5,15 +5,13 @@ $anim-dur: 1000ms;
 $anim-delay: calc($anim-dur / 5);
 
 @keyframes loader {
-    0% {
-        transform: translateX(0);
-    }
-    99% {
-        transform: translateX(-450px);
-    }
-    100% {
-        transform: translateX(-9999px);
-        }
+   from {
+    opacity: 1;
+   }
+   to {
+    opacity: 0;
+    display: none;
+   }
 }
 
 @keyframes loadBars {
