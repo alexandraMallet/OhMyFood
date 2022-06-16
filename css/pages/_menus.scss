@@ -1,4 +1,4 @@
-@keyframes progressDihes {
+@keyframes progressDishes {
     from {
         opacity: 0;
     }
@@ -9,15 +9,15 @@
 
 
 .dishesCategory-1 {
-    animation: progressDishes 500ms 500ms;
+    animation: progressDishes 1s 1s backwards;
 }
 
 .dishesCategory-2 {
-    animation: progressDishes 500ms 750ms;
+    animation: progressDishes 1s 2s backwards;
 }
 
 .dishesCategory-3 {
-    animation: progressDishes 500ms 1000ms;
+    animation: progressDishes 1s 3s backwards;
 }
 
 
@@ -167,11 +167,11 @@
 }
 
 .dishesTxt {
-    &:hover + .dishesCheck {
+    &:active + .dishesCheck {
         transform: scaleX(1);
     }
 
-    &:hover {
+    &:active {
         width: calc(100% - 80px);
         cursor: pointer;
     }
@@ -187,10 +187,6 @@
     &:hover {
         transform: scaleX(1);
         cursor: pointer;
-    }
-
-    &:hover + .dishesTxt {
-        width: 50px;
     }
 }
 

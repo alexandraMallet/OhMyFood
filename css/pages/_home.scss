@@ -5,10 +5,13 @@ $anim-dur: 1000ms;
 $anim-delay: calc($anim-dur / 5);
 
 @keyframes loader {
-   from {
+   0% {
     opacity: 1;
    }
-   to {
+   90% {
+    opacity: 0.99;
+   }
+   100% {
     opacity: 0;
     display: none;
    }
@@ -35,7 +38,7 @@ $anim-delay: calc($anim-dur / 5);
     background-color: #f2f2f2;
     display: flex;
     justify-content: space-evenly;
-    animation: loader 10000ms 0s forwards;
+    animation: loader 3000ms 0s forwards;
     &__bar {
         height: 70%;
         width: $size*2;
@@ -43,11 +46,6 @@ $anim-delay: calc($anim-dur / 5);
         border-radius: 20px;
         background: linear-gradient($color-secondary, $color-primary);
         animation: loadBars $anim-dur backwards infinite ease-in-out alternate;
-        @for $i from 1 through 3 {
-            &--#{$i} {
-                animation-delay: $anim-delay * $i;
-            }
-        }
     }
 }
 

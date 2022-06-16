@@ -1,0 +1,61 @@
+/*responsive tablette*/
+
+
+@media screen and (min-width:768px) and (max-width: 991px) {
+
+
+    footer {
+        background-color: mediumaquamarine;
+    }
+
+
+}
+
+
+
+
+
+
+/*responsive desktop*/
+
+@media screen and (min-width: 992px) {
+
+
+    .dishesTxt {
+        &:hover+.dishesCheck {
+            transform: scaleX(1);
+        }
+
+        &:hover {
+            width: calc(100% - 80px);
+            cursor: pointer;
+        }
+
+    }
+
+
+    .dishesCheck {
+        transform-origin: 100% 50%;
+        transform: scaleX(0);
+        transition: transform 500ms;
+
+        &:hover {
+            transform: scaleX(1);
+            cursor: pointer;
+        }
+
+        &:hover+.dishesTxt {
+            width: 50px;
+        }
+    }
+
+
+    
+    footer {
+        background-color: violet;
+    }
+
+
+
+
+}
