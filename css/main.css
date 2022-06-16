@@ -88,6 +88,22 @@ img {
     transform: rotate(360 deg);
   }
 }
+@-webkit-keyframes loadIcon {
+  from {
+    transform: rotate(-360 deg);
+  }
+  to {
+    transform: rotate(0 deg);
+  }
+}
+@keyframes loadIcon {
+  from {
+    transform: rotate(-360 deg);
+  }
+  to {
+    transform: rotate(0 deg);
+  }
+}
 .load {
   position: absolute;
   z-index: 3;
@@ -117,6 +133,8 @@ img {
 }
 .load__btn i {
   font-size: 84px;
+  -webkit-animation: loadIcon 400ms linear infinite;
+          animation: loadIcon 400ms linear infinite;
 }
 
 .myLocation {

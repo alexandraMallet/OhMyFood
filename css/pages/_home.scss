@@ -30,6 +30,14 @@ $anim-delay: calc($anim-dur / 5);
     }
 }
 
+@keyframes loadIcon {
+    from {
+        transform: rotate(-360 deg);
+    }
+    to {
+        transform: rotate(0 deg);
+    }
+}
 
 .load {
     position: absolute;
@@ -55,6 +63,7 @@ $anim-delay: calc($anim-dur / 5);
 
         & i {
             font-size: 84px;
+            animation: loadIcon 400ms linear infinite;
         }
     }
 }
