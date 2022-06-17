@@ -469,10 +469,10 @@ header a {
   color: #99E2D0;
 }
 
-.dishesTxt:hover + .dishesCheck {
+.dishesCard:hover > .dishesCheck {
   transform: scaleX(1);
 }
-.dishesTxt:hover {
+.dishesCard:hover > .dishesTxt {
   width: calc(100% - 80px);
   cursor: pointer;
 }
@@ -485,9 +485,6 @@ header a {
 .dishesCheck:hover {
   transform: scaleX(1);
   cursor: pointer;
-}
-.dishesCheck:hover + .dishesTxt {
-  width: 50px;
 }
 
 /*

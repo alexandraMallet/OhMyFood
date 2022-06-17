@@ -142,12 +142,12 @@
     }
 }
 
-.dishesTxt {
-    &:hover + .dishesCheck {
+.dishesCard {
+    &:hover > .dishesCheck {
         transform: scaleX(1);
     }
 
-    &:hover {
+    &:hover > .dishesTxt {
         width: calc(100% - 80px);
         cursor: pointer;
     }
@@ -163,10 +163,6 @@
     &:hover {
         transform: scaleX(1);
         cursor: pointer;
-    }
-
-    &:hover + .dishesTxt {
-        width: 50px;
     }
 }
 
