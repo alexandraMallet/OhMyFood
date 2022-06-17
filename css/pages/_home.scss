@@ -183,6 +183,18 @@ $anim-delay: calc($anim-dur / 5);
         }
 }
 
+
+@keyframes likeIcon {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
 .restInfo {
     display: flex;
     justify-content: space-between;
@@ -206,7 +218,7 @@ $anim-delay: calc($anim-dur / 5);
             position:relative;
             z-index: 1;
 
-            &:hover {
+            &:active {
 
                 @include gradientIcon;
 
