@@ -66,12 +66,13 @@
     /*check sur les plats*/
 
 
-    .dishesTxt {
-        &:hover + .dishesCheck {
+    .dishesCard {
+        &:hover > .dishesCheck {
             transform: scaleX(1);
+            cursor: pointer;
         }
     
-        &:hover {
+        &:hover > .dishesTxt {
             width: calc(100% - 80px);
             cursor: pointer;
         }
@@ -79,15 +80,11 @@
     }
     
     
+    
     .dishesCheck {
         transform-origin: 100% 50%;
         transform: scaleX(0);
         transition: transform 500ms;
-    
-        &:hover {
-            transform: scaleX(1);
-            cursor: pointer;
-        }
     }
 
 
