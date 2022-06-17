@@ -269,6 +269,43 @@ img {
   margin: 0;
 }
 
+@-webkit-keyframes likeIcon {
+  from {
+    opacity: 0;
+    background: linear-gradient(#9356DC, #FF79DA);
+    -webkit-background-clip: text;
+            background-clip: text;
+    color: transparent;
+    display: none;
+  }
+  to {
+    opacity: 1;
+    background: linear-gradient(#9356DC, #FF79DA);
+    -webkit-background-clip: text;
+            background-clip: text;
+    color: transparent;
+    display: flex;
+  }
+}
+
+@keyframes likeIcon {
+  from {
+    opacity: 0;
+    background: linear-gradient(#9356DC, #FF79DA);
+    -webkit-background-clip: text;
+            background-clip: text;
+    color: transparent;
+    display: none;
+  }
+  to {
+    opacity: 1;
+    background: linear-gradient(#9356DC, #FF79DA);
+    -webkit-background-clip: text;
+            background-clip: text;
+    color: transparent;
+    display: flex;
+  }
+}
 .restInfo {
   display: flex;
   justify-content: space-between;
@@ -289,37 +326,28 @@ img {
   align-items: center;
   font-size: x-large;
   cursor: pointer;
-  position: relative;
   z-index: 1;
+  border-radius: 50px;
 }
-.restInfo .likeIcon:hover {
-  background: linear-gradient(#9356DC, #FF79DA);
-  -webkit-background-clip: text;
-          background-clip: text;
-  color: transparent;
+.restInfo .likeIcon .likeIconWhite {
+  position: relative;
 }
-.restInfo .likeIcon:hover::after {
-  opacity: 1;
-}
-.restInfo .likeIcon::after {
-  font: var(--fa-font-solid);
-  content: "\f004";
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: x-large;
+.restInfo .likeIcon .likeIconPink {
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
   left: 0;
+  top: 0;
+  -webkit-animation: likeIcon 1s forwards;
+          animation: likeIcon 1s forwards;
+}
+.restInfo .likeIcon:active {
   background: linear-gradient(#9356DC, #FF79DA);
   -webkit-background-clip: text;
           background-clip: text;
   color: transparent;
-  opacity: 0;
-  z-index: -1;
-  transition: opacity 500ms;
+}
+.restInfo .likeIcon:active:active > .likeIconPink {
+  -webkit-animation: likeIcon 1s forwards;
+          animation: likeIcon 1s forwards;
 }
 
 header a {
