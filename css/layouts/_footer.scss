@@ -2,6 +2,12 @@ footer {
     height: 200px;
     background-color: darken($color: $color-background, $amount: 20%);
     color: white;
+    @include desktop-only {
+        background-color: aquamarine;
+    }
+    @include tab-only {
+        background-color: pink;
+    }
 
     h4 {
     font-family: Shrikhand;

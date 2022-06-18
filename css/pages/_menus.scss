@@ -176,6 +176,18 @@
         cursor: pointer;
     }
 
+    @include desktop-only {
+        &:hover > .dishesCheck {
+            transform: scaleX(1);
+            cursor: pointer;
+        }
+    
+        &:hover > .dishesTxt {
+            width: calc(100% - 80px);
+            cursor: pointer;
+        }
+    }
+
 }
 
 

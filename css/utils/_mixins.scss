@@ -21,3 +21,17 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+/*responsive*/
+
+@mixin tab-only {
+    @media screen and (min-width:768px) and (max-width: 991px) {
+        @content;
+    }
+}
+
+@mixin desktop-only {
+    @media screen and (min-width: 992px) {
+        @content;
+    }
+}

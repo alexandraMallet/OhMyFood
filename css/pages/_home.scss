@@ -242,6 +242,33 @@ $anim-delay: calc($anim-dur / 5);
                 z-index: -1;
                 transition: opacity 500ms;
             }
+
+            @include desktop-only {
+                &:hover {
+
+                    @include gradientIcon;
+        
+                    &::after {
+                        opacity:1;
+                    }
+                }
+        
+                &::after {
+                    font: var(--fa-font-solid);
+                    content:"\f004";
+                    @include center;
+                    font-size:x-large;
+                    position: absolute;
+                    top:0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    @include gradientIcon;
+                    opacity: 0;
+                    z-index: -1;
+                    transition: opacity 500ms;
+                }
+            }
         }
     }
 
