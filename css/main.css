@@ -51,9 +51,12 @@ img {
   90% {
     opacity: 0.99;
   }
+  99% {
+    z-index: 3;
+  }
   100% {
     opacity: 0;
-    display: none;
+    z-index: -5;
   }
 }
 
@@ -64,9 +67,12 @@ img {
   90% {
     opacity: 0.99;
   }
+  99% {
+    z-index: 3;
+  }
   100% {
     opacity: 0;
-    display: none;
+    z-index: -5;
   }
 }
 @-webkit-keyframes loadBars {
