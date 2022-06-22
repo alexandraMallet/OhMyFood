@@ -1,30 +1,31 @@
-
-
 $size: 3vh;
 $anim-dur: 1000ms;
 $anim-delay: calc($anim-dur / 5);
 
 @keyframes loader {
-   0% {
-    opacity: 1;
-   }
-   90% {
-    opacity: 0.99;
-   }
+    0% {
+        opacity: 1;
+    }
 
-   99% {
-    z-index:3;
-   }
-   100% {
-    opacity: 0;
-    z-index: -5;
-   }
+    90% {
+        opacity: 0.99;
+    }
+
+    99% {
+        z-index: 3;
+    }
+
+    100% {
+        opacity: 0;
+        z-index: -5;
+    }
 }
 
 @keyframes loadBars {
     0% {
         transform: scaleY(0.5);
     }
+
     100% {
         transform: scaleY(1.0);
     }
@@ -43,6 +44,7 @@ $anim-delay: calc($anim-dur / 5);
     display: flex;
     justify-content: space-evenly;
     animation: loader 3000ms 0s forwards;
+
     &__bar {
         height: 70%;
         width: $size*2;
@@ -56,7 +58,7 @@ $anim-delay: calc($anim-dur / 5);
 .myLocation {
     height: 40px;
     @include center;
-    background-color:lightgrey;
+    background-color: lightgrey;
     box-shadow: inset 0 5px 5px -5px rgb(129, 129, 129);
 
     .locText {
@@ -65,7 +67,7 @@ $anim-delay: calc($anim-dur / 5);
 
     .locText::before {
         font: var(--fa-font-solid);
-        content:"\f3c5";
+        content: "\f3c5";
         padding-right: 20px;
     }
 }
@@ -73,7 +75,7 @@ $anim-delay: calc($anim-dur / 5);
 .locGuide {
     height: 250px;
     background-color: $color-background-light;
-    text-align:  center;
+    text-align: center;
 
     h2 {
         margin-top: 0px;
@@ -125,16 +127,17 @@ $anim-delay: calc($anim-dur / 5);
     @include center;
     @include bold;
 
-        &:hover {
-            background-color: lighten($color-primary, $amount: 35%);
-            .opIcon {
-                color: $color-primary;
-            }
+    &:hover {
+        background-color: lighten($color-primary, $amount: 35%);
+
+        .opIcon {
+            color: $color-primary;
         }
+    }
 }
 
 .opIcon {
-    padding-right:20px;
+    padding-right: 20px;
 }
 
 .restaurants {
@@ -171,36 +174,24 @@ $anim-delay: calc($anim-dur / 5);
 
 
 .newRest {
-    position:absolute;
+    position: absolute;
     right: 20px;
     top: 20px;
     padding-left: 15px;
     padding-right: 15px;
     height: 30px;
     background-color: $color-tertiary;
-    color:(darken($color: $color-tertiary, $amount: 40%));
+    color: (darken($color: $color-tertiary, $amount: 40%));
     @include bold;
     @include center;
-    
-        p {
-            margin: 0;
-        }
-}
 
-
-@keyframes likeIcon {
-    0% {
-        transform: scale(0);
-    }
-
-    40% {
-        transform: scale(0.3);
-    }
-
-    100% {
-        transform: scale(1);
+    p {
+        margin: 0;
     }
 }
+
+
+
 
 
 
@@ -211,170 +202,67 @@ $anim-delay: calc($anim-dur / 5);
     margin-left: 10px;
     margin-right: 20px;
 
-        .restText h3 {
-            margin-top: 10px;
-            margin-bottom: 0;
+    .restText h3 {
+        margin-top: 10px;
+        margin-bottom: 0;
+    }
+
+    .restText p {
+        margin-top: 5px;
+        margin-bottom: 15px;
+    }
+
+    .likeIcon {
+        @include center;
+        width: 70px;
+        position: relative;
+        font-size: x-large;
+        cursor: pointer;
+        border-radius: 50px;
+
+        .likeIconWhite {
+            position: absolute;
+            top: 23px;
+            left: 23px;
+            z-index: 5;
+
         }
 
-        .restText p {
-            margin-top: 5px;
-            margin-bottom: 15px;
+        .likeIconPink {
+            position: absolute;
+            top: 23px;
+            left: 23px;
+            @include gradientIcon;
+            transform: scale(0);
         }
 
-        .likeIcon {
-            @include center;
-            width: 70px;
-            position: relative;
-            font-size: x-large;
-            cursor: pointer;
-            border-radius: 50px;
+        &:active>.likeIconWhite {
+            z-index: -2;
+        }
 
-            &:active > .likeIconWhite {
-                @include gradientIcon;
+        &:active>.likeIconPink {
+            animation: likeIcon $anim-dur forwards;
+        }
+
+        @include desktop-only {
+            &:hover>.likeIconWhite {
+                z-index: -2;
             }
 
-            &:active > .likeIconPink {
-                animation: likeIcon 10000ms both;
+            &:hover>.likeIconPink {
+                animation: likeIcon $anim-dur forwards;
+            }
+        }
+
+
+        @keyframes likeIcon {
+            0% {
+                transform: scale(0);
             }
 
-
-            /*
-            .likeIconWhite {
-                position: relative;
-
-                &:active > .likeIconPink {
-                    animation: likeIcon 10000ms forwards;
-                }
-            }
-            */
-
-            .likeIconWhite {
-                position: absolute;
-                top:23px;
-                left:23px
-            }
-
-            .likeIconPink {
-                position: absolute;
-                top:23px;
-               // right: 0;
-               // bottom: 0;
-               left: 23px;
-                @include gradientIcon;
-            }
-
-
-
-
-            @include desktop-only {
-                &:hover {
-
-                    @include gradientIcon;
-        
-                    &::after {
-                        opacity:1;
-                    }
-                }
-        
-                &::after {
-                    font: var(--fa-font-solid);
-                    content:"\f004";
-                    @include center;
-                    font-size:x-large;
-                    position: absolute;
-                    top:0;
-                    right: 0;
-                    bottom: 0;
-                    left: 0;
-                    @include gradientIcon;
-                    opacity: 0;
-                    z-index: -1;
-                    transition: opacity 500ms;
-                }
+            100% {
+                transform: scale(1);
             }
         }
     }
-
-
-
-    /*
-
-.restInfo {
-    display: flex;
-    justify-content: space-between;
-    margin-left: 10px;
-    margin-right: 20px;
-
-        .restText h3 {
-            margin-top: 10px;
-            margin-bottom: 0;
-        }
-
-        .restText p {
-            margin-top: 5px;
-            margin-bottom: 15px;
-        }
-
-        .likeIcon {
-            @include center;
-            font-size: x-large;
-            cursor: pointer;
-            position:relative;
-            z-index: 1;
-
-            &:active {
-
-                @include gradientIcon;
-
-                &::after {
-                    opacity:1;
-                }
-            }
-
-            &::after {
-                font: var(--fa-font-solid);
-                content:"\f004";
-                @include center;
-                font-size:x-large;
-                position: absolute;
-                top:0;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                @include gradientIcon;
-                opacity: 0;
-                z-index: -1;
-                transition: opacity 500ms;
-            }
-
-            @include desktop-only {
-                &:hover {
-
-                    @include gradientIcon;
-        
-                    &::after {
-                        opacity:1;
-                    }
-                }
-        
-                &::after {
-                    font: var(--fa-font-solid);
-                    content:"\f004";
-                    @include center;
-                    font-size:x-large;
-                    position: absolute;
-                    top:0;
-                    right: 0;
-                    bottom: 0;
-                    left: 0;
-                    @include gradientIcon;
-                    opacity: 0;
-                    z-index: -1;
-                    transition: opacity 500ms;
-                }
-            }
-        }
-    }
-
-*/
-    
+}

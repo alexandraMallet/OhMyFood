@@ -247,29 +247,6 @@ img {
   margin: 0;
 }
 
-@-webkit-keyframes likeIcon {
-  0% {
-    transform: scale(0);
-  }
-  40% {
-    transform: scale(0.3);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-@keyframes likeIcon {
-  0% {
-    transform: scale(0);
-  }
-  40% {
-    transform: scale(0.3);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
 .restInfo {
   display: flex;
   justify-content: space-between;
@@ -293,30 +270,12 @@ img {
   font-size: x-large;
   cursor: pointer;
   border-radius: 50px;
-  /*
-  .likeIconWhite {
-      position: relative;
-
-      &:active > .likeIconPink {
-          animation: likeIcon 10000ms forwards;
-      }
-  }
-  */
-}
-.restInfo .likeIcon:active > .likeIconWhite {
-  background: linear-gradient(#9356DC, #FF79DA);
-  -webkit-background-clip: text;
-          background-clip: text;
-  color: transparent;
-}
-.restInfo .likeIcon:active > .likeIconPink {
-  -webkit-animation: likeIcon 10000ms both;
-          animation: likeIcon 10000ms both;
 }
 .restInfo .likeIcon .likeIconWhite {
   position: absolute;
   top: 23px;
   left: 23px;
+  z-index: 5;
 }
 .restInfo .likeIcon .likeIconPink {
   position: absolute;
@@ -326,119 +285,41 @@ img {
   -webkit-background-clip: text;
           background-clip: text;
   color: transparent;
+  transform: scale(0);
+}
+.restInfo .likeIcon:active > .likeIconWhite {
+  z-index: -2;
+}
+.restInfo .likeIcon:active > .likeIconPink {
+  -webkit-animation: likeIcon 1000ms forwards;
+          animation: likeIcon 1000ms forwards;
 }
 @media screen and (min-width: 992px) {
-  .restInfo .likeIcon:hover {
-    background: linear-gradient(#9356DC, #FF79DA);
-    -webkit-background-clip: text;
-            background-clip: text;
-    color: transparent;
+  .restInfo .likeIcon:hover > .likeIconWhite {
+    z-index: -2;
   }
-  .restInfo .likeIcon:hover::after {
-    opacity: 1;
+  .restInfo .likeIcon:hover > .likeIconPink {
+    -webkit-animation: likeIcon 1000ms forwards;
+            animation: likeIcon 1000ms forwards;
   }
-  .restInfo .likeIcon::after {
-    font: var(--fa-font-solid);
-    content: "\f004";
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: x-large;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: linear-gradient(#9356DC, #FF79DA);
-    -webkit-background-clip: text;
-            background-clip: text;
-    color: transparent;
-    opacity: 0;
-    z-index: -1;
-    transition: opacity 500ms;
+}
+@-webkit-keyframes likeIcon {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes likeIcon {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 
-/*
-
-.restInfo {
-    display: flex;
-    justify-content: space-between;
-    margin-left: 10px;
-    margin-right: 20px;
-
-        .restText h3 {
-            margin-top: 10px;
-            margin-bottom: 0;
-        }
-
-        .restText p {
-            margin-top: 5px;
-            margin-bottom: 15px;
-        }
-
-        .likeIcon {
-            @include center;
-            font-size: x-large;
-            cursor: pointer;
-            position:relative;
-            z-index: 1;
-
-            &:active {
-
-                @include gradientIcon;
-
-                &::after {
-                    opacity:1;
-                }
-            }
-
-            &::after {
-                font: var(--fa-font-solid);
-                content:"\f004";
-                @include center;
-                font-size:x-large;
-                position: absolute;
-                top:0;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                @include gradientIcon;
-                opacity: 0;
-                z-index: -1;
-                transition: opacity 500ms;
-            }
-
-            @include desktop-only {
-                &:hover {
-
-                    @include gradientIcon;
-
-                    &::after {
-                        opacity:1;
-                    }
-                }
-
-                &::after {
-                    font: var(--fa-font-solid);
-                    content:"\f004";
-                    @include center;
-                    font-size:x-large;
-                    position: absolute;
-                    top:0;
-                    right: 0;
-                    bottom: 0;
-                    left: 0;
-                    @include gradientIcon;
-                    opacity: 0;
-                    z-index: -1;
-                    transition: opacity 500ms;
-                }
-            }
-        }
-    }
-
-*/
 header a {
   position: absolute;
   top: 25px;
