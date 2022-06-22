@@ -191,11 +191,6 @@ $anim-delay: calc($anim-dur / 5);
 }
 
 
-
-
-
-
-
 .restInfo {
     display: flex;
     justify-content: space-between;
@@ -218,7 +213,6 @@ $anim-delay: calc($anim-dur / 5);
         position: relative;
         font-size: x-large;
         cursor: pointer;
-        border-radius: 50px;
 
         .likeIconWhite {
             position: absolute;

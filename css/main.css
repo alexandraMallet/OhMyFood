@@ -269,7 +269,6 @@ img {
   position: relative;
   font-size: x-large;
   cursor: pointer;
-  border-radius: 50px;
 }
 .restInfo .likeIcon .likeIconWhite {
   position: absolute;
