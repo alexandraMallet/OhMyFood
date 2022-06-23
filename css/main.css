@@ -402,6 +402,12 @@ header a {
           animation: progressDishes 1s 3s backwards;
 }
 
+@media screen and (min-width: 992px) {
+  .dishesCategory {
+    width: 33%;
+  }
+}
+
 .imgMenu {
   margin-top: 0;
   margin-bottom: -50px;
@@ -424,6 +430,11 @@ header a {
   position: relative;
   z-index: 3;
 }
+@media screen and (min-width: 992px) {
+  .completeMenu {
+    height: 550px;
+  }
+}
 .completeMenu h1 {
   margin-bottom: 20px;
   font-size: 26px;
@@ -444,6 +455,13 @@ header a {
 
 .completeMenu {
   background-color: #f2f2f2;
+}
+
+@media screen and (min-width: 992px) {
+  .dishesCategories {
+    display: flex;
+    justify-content: space-around;
+  }
 }
 
 .dishesCatTitle h3 {

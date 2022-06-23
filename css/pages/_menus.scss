@@ -20,7 +20,11 @@
     animation: progressDishes 1s 3s backwards;
 }
 
-
+.dishesCategory {
+    @include desktop-only {
+        width: 33%;
+    }
+}
 
 .imgMenu {
     margin-top: 0;
@@ -45,6 +49,10 @@
     position: relative;
     z-index: 3;
 
+    @include desktop-only {
+        height: 550px;
+    }
+
     h1 {
         margin-bottom: 20px;
         font-size: 26px;
@@ -68,6 +76,13 @@
 
 .completeMenu {
     background-color: $color-background-light;
+}
+
+.dishesCategories {
+    @include desktop-only {
+        display: flex;
+        justify-content: space-around;
+    }
 }
 
 
