@@ -34,7 +34,7 @@ $anim-delay: calc($anim-dur / 5);
 
 .load {
     position: absolute;
-    z-index: 3;
+    z-index: 6;
     overflow: hidden;
     padding-top: 50px;
     padding-bottom: 50px;
@@ -95,9 +95,21 @@ $anim-delay: calc($anim-dur / 5);
 }
 
 
+.op {
+    @include desktop-only {
+        display: flex;
+        justify-content: space-around;
+    }
+}
+
+
 .opTitle {
     margin-top: 50px;
     padding-left: 20px;
+
+    @include desktop-only {
+        @include center;
+    }
 }
 
 .opNumber {
@@ -134,6 +146,10 @@ $anim-delay: calc($anim-dur / 5);
             color: $color-primary;
         }
     }
+
+    @include desktop-only {
+        width: 300px;
+    }
 }
 
 .opIcon {
@@ -145,12 +161,23 @@ $anim-delay: calc($anim-dur / 5);
     margin-top: 70px;
     height: 1200px;
 
+    @include desktop-only {
+        height: 500px;
+    }
+
     h2 {
         padding-left: 30px;
         padding-top: 30px;
     }
 }
 
+.restCards {
+    @include desktop-only {
+        display: flex;
+        justify-content: space-around;
+        padding-top: 20px;
+    }
+}
 
 .restCard {
     margin-left: 30px;
@@ -218,7 +245,7 @@ $anim-delay: calc($anim-dur / 5);
             position: absolute;
             top: 23px;
             left: 23px;
-            z-index: 5;
+            z-index: 2;
 
         }
 

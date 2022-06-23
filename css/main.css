@@ -93,7 +93,7 @@ img {
 }
 .load {
   position: absolute;
-  z-index: 3;
+  z-index: 6;
   overflow: hidden;
   padding-top: 50px;
   padding-bottom: 50px;
@@ -151,9 +151,23 @@ img {
   margin-top: 15px;
 }
 
+@media screen and (min-width: 992px) {
+  .op {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
 .opTitle {
   margin-top: 50px;
   padding-left: 20px;
+}
+@media screen and (min-width: 992px) {
+  .opTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .opNumber {
@@ -193,6 +207,11 @@ img {
 .opBox:hover .opIcon {
   color: #9356DC;
 }
+@media screen and (min-width: 992px) {
+  .opBox {
+    width: 300px;
+  }
+}
 
 .opIcon {
   padding-right: 20px;
@@ -203,9 +222,22 @@ img {
   margin-top: 70px;
   height: 1200px;
 }
+@media screen and (min-width: 992px) {
+  .restaurants {
+    height: 500px;
+  }
+}
 .restaurants h2 {
   padding-left: 30px;
   padding-top: 30px;
+}
+
+@media screen and (min-width: 992px) {
+  .restCards {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+  }
 }
 
 .restCard {
@@ -274,7 +306,7 @@ img {
   position: absolute;
   top: 23px;
   left: 23px;
-  z-index: 5;
+  z-index: 2;
 }
 .restInfo .likeIcon .likeIconPink {
   position: absolute;
