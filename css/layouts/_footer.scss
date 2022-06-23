@@ -18,6 +18,10 @@ footer {
     margin: 0;
     padding-left: 30px;
 
+    @include desktop-only {
+        padding-left: 50px;
+    }
+
     li {
         padding-bottom: 5px;
 

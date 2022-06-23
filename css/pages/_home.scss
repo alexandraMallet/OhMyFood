@@ -189,6 +189,11 @@ $anim-delay: calc($anim-dur / 5);
     box-shadow: 2px 1px 4px 1px lightgray;
     border-radius: 20px;
     background-color: white;
+
+    @include desktop-only {
+        box-shadow: 2px 2px 4px 2px lightgray;
+        width: 265px;
+    }
 }
 
 .restCard img {
@@ -223,6 +228,10 @@ $anim-delay: calc($anim-dur / 5);
     justify-content: space-between;
     margin-left: 10px;
     margin-right: 20px;
+
+    @include desktop-only {
+        margin-right: 0px;
+    }
 
     .restText h3 {
         margin-top: 10px;

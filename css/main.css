@@ -251,6 +251,12 @@ img {
   border-radius: 20px;
   background-color: white;
 }
+@media screen and (min-width: 992px) {
+  .restCard {
+    box-shadow: 2px 2px 4px 2px lightgray;
+    width: 265px;
+  }
+}
 
 .restCard img {
   -o-object-fit: cover;
@@ -284,6 +290,11 @@ img {
   justify-content: space-between;
   margin-left: 10px;
   margin-right: 20px;
+}
+@media screen and (min-width: 992px) {
+  .restInfo {
+    margin-right: 0px;
+  }
 }
 .restInfo .restText h3 {
   margin-top: 10px;
@@ -742,6 +753,11 @@ footer h4 {
   list-style-type: none;
   margin: 0;
   padding-left: 30px;
+}
+@media screen and (min-width: 992px) {
+  .footerList {
+    padding-left: 50px;
+  }
 }
 .footerList li {
   padding-bottom: 5px;
