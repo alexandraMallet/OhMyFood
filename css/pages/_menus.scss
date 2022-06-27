@@ -229,6 +229,14 @@
         animation: rotate 700ms ease 0s;
         }
     }
+
+    @include desktop-only {
+        &:hover > .dishesCheck {
+            & > .dishesCheck__circle {
+            animation: rotate 700ms ease 0s;
+            }
+        }
+    }
 }
 
 

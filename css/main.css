@@ -600,6 +600,12 @@ header a {
   -webkit-animation: rotate 700ms ease 0s;
           animation: rotate 700ms ease 0s;
 }
+@media screen and (min-width: 992px) {
+  .dishesCard:hover > .dishesCheck > .dishesCheck__circle {
+    -webkit-animation: rotate 700ms ease 0s;
+            animation: rotate 700ms ease 0s;
+  }
+}
 
 /*
 
