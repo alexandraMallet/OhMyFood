@@ -35,6 +35,7 @@ img {
   max-width: 100%;
 }
 
+/*animation LOADER*/
 @-webkit-keyframes loader {
   0% {
     opacity: 1;
@@ -50,7 +51,6 @@ img {
     z-index: -5;
   }
 }
-
 @keyframes loader {
   0% {
     opacity: 1;
@@ -106,6 +106,7 @@ img {
           animation: loadBars 1000ms backwards infinite ease-in-out alternate;
 }
 
+/*localisation*/
 .myLocation {
   height: 40px;
   display: flex;
@@ -142,6 +143,7 @@ img {
   margin-top: 15px;
 }
 
+/*fonctionnement du site*/
 @media screen and (min-width: 992px) {
   .op {
     display: flex;
@@ -208,6 +210,7 @@ img {
   padding-right: 20px;
 }
 
+/*les restaurants*/
 .restaurants {
   background-color: #f2f2f2;
   margin-top: 70px;
@@ -366,6 +369,7 @@ header a {
   font-size: x-large;
 }
 
+/*animation apparition des catégories de plats*/
 @-webkit-keyframes progressDishes {
   from {
     opacity: 0;
@@ -374,7 +378,6 @@ header a {
     opacity: 1;
   }
 }
-
 @keyframes progressDishes {
   from {
     opacity: 0;
@@ -404,6 +407,7 @@ header a {
   }
 }
 
+/*image restaurant*/
 .imgMenu {
   margin-top: 0;
   margin-bottom: -50px;
@@ -419,12 +423,14 @@ header a {
   z-index: 2;
 }
 
+/*menu*/
 .completeMenu {
   height: 1250px;
   border-top-left-radius: 50px;
   border-top-right-radius: 50px;
   position: relative;
   z-index: 3;
+  background-color: #f2f2f2;
 }
 @media screen and (min-width: 992px) {
   .completeMenu {
@@ -449,10 +455,7 @@ header a {
   padding-left: 30px;
 }
 
-.completeMenu {
-  background-color: #f2f2f2;
-}
-
+/*catégories*/
 @media screen and (min-width: 992px) {
   .dishesCategories {
     display: flex;
@@ -473,6 +476,7 @@ header a {
   border-top: 3px solid #99E2D0;
 }
 
+/*plats*/
 .dishesCard {
   position: relative;
   height: 80px;
@@ -529,6 +533,7 @@ header a {
   text-overflow: ellipsis;
 }
 
+/*animation check sur le plat*/
 .dishesCheck {
   position: absolute;
   top: 0;
@@ -555,6 +560,11 @@ header a {
   color: #99E2D0;
 }
 
+.dishesCard .dishesCheck {
+  transform-origin: 100% 50%;
+  transform: scaleX(0);
+  transition: transform 500ms;
+}
 .dishesCard:active > .dishesCheck {
   transform: scaleX(1);
 }
@@ -572,11 +582,15 @@ header a {
     cursor: pointer;
   }
 }
-
-.dishesCheck {
-  transform-origin: 100% 50%;
-  transform: scaleX(0);
-  transition: transform 500ms;
+.dishesCard:active > .dishesCheck > .dishesCheck__circle {
+  -webkit-animation: rotate 700ms ease 0s;
+          animation: rotate 700ms ease 0s;
+}
+@media screen and (min-width: 992px) {
+  .dishesCard:hover > .dishesCheck > .dishesCheck__circle {
+    -webkit-animation: rotate 700ms ease 0s;
+            animation: rotate 700ms ease 0s;
+  }
 }
 
 @-webkit-keyframes rotate {
@@ -596,187 +610,6 @@ header a {
     transform: rotate(360deg);
   }
 }
-.dishesCard:active > .dishesCheck > .dishesCheck__circle {
-  -webkit-animation: rotate 700ms ease 0s;
-          animation: rotate 700ms ease 0s;
-}
-@media screen and (min-width: 992px) {
-  .dishesCard:hover > .dishesCheck > .dishesCheck__circle {
-    -webkit-animation: rotate 700ms ease 0s;
-            animation: rotate 700ms ease 0s;
-  }
-}
-
-/*
-
-.btn {
-    &:hover + .boxes {
-        & > .boxes--rotDegrees {
-            transform: rotate(0deg);
-        }
-        & > .boxes--rotTurns {
-             transform: rotate(0turn);
-        }
-    }
-}
-
-.boxes {
-   &--rotDegrees {
-        transform: rotate(-360deg);
-        transition: transform 500ms ease-in-out;
-    }
-
-    &--rotTurns {
-        background: pink;
-        transform: rotate(-1turn);
-        transition: transform 500ms ease-in-out;
-    }
-}
-
-LE HTML : 
-<div class="container">
-    <button class="btn">Transform!</button>
-    <div class="boxes">
-        <div class="boxes__base boxes--rotDegrees">rotate(360deg)</div>
-        <div class="boxes__base boxes--rotTurns">rotate(1turn)</div>
-    </div>
-</div>
-
-____________________________________________________________________________________________________________________________________
-
-
-$easing: cubic-bezier(.49,.18,.23,1);
-$width: 33vh;
-$height: 72vh;
-$margin-right: 4vh;
-$wid-marg: $width + $margin-right;
-.card {
-    width: $width;
-    height: $height;
-    overflow: hidden;
-    &:not(:last-child){
-        margin-right: $margin-right;
-    }
-    &--anim {
-        transform: translateX($width-marg);
-        transition: transform 700ms $easing;
-    }
-    &__contents {
-        width: $width;
-        overflow: hidden;
-    &--anim {
-            transform: translateX($wid-marg*-1);
-            transition: transform 700ms $easing;
-        }
-    }
-}
-.btn {
-    &--reveal {
-        &:hover {
-            & + .card {
-                &--anim {
-                    transform: translateX(0);
-                }
-                .card__contents--anim {
-                    transform: translateX(0);
-                }
-            }
-        }
-    }
-}
-
-
-
-</>
-$easing: cubic-bezier(.49,.18,.23,1);
-$width: 33vh;
-$height: 72vh;
-$margin-right: 4vh;
-$wid-marg: $width + $margin-right;
-.card {
-    width: $width;
-    height: $height;
-    overflow: hidden;
-    &:not(:last-child){
-        margin-right: $margin-right;
-    }
-    &--anim {
-        transform: translateX($width-marg);
-        transition: transform 700ms $easing;
-    }   
-    &__contents {
-        width: $width;
-        overflow: hidden;
-    &--anim {
-            transform: translateX($wid-marg*-1);
-            transition: transform 700ms $easing;
-        }
-    }
-    &__block {
-    overflow: hidden;
-    // une boucle créée avec sass qui itère de 1 à 3, en utilisant l'index
-    // comme suffixe pour le nom --anim mod
-    // ainsi que comme valeur pour multiplier la valeur de transition delay
-    @for $i from 1 through 3 {
-        &--anim-# {
-                transform: translateX(-108%);
-                transition: transform 500ms $easing 50ms*$i;
-            }
-        }
-        &:not(:first-child) {
-            margin-top: 1rem;
-        }
-
-}
-.btn {
-    &--reveal {
-        &:hover {
-            & + .card {
-                &--anim {
-                    transform: translateX(0);
-                }
-                .card__contents--anim {
-                    transform: translateX(0);
-                }
-                .card__block--anim {
-                    transform: translateX(0);
-                }
-            }
-        }
-    }
-}
-
-___________________________________________________________________________________________
-
-
-
-
-___________________________________________________________________________________________________________________
-
-
-.btn {
-    &:hover + .box {
-        transform: scale(1);
-        span {
-            transform: translateY(0);
-        }
-    }
-}
-
-.box {
-    transform: scale(0.1);
-    transition: transform 330ms ease-in-out;
-    overflow: hidden;
-
-    span {
-        display: inline-block;
-        transform: translateY(250%);
-        transition: transform 280ms ease-out 50ms;
-    }
-}
-
-
-*/
 footer {
   height: 200px;
   width: 100%;
