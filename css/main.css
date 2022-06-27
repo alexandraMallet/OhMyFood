@@ -1,7 +1,5 @@
 @charset "UTF-8";
-/* tablette : 768
-smartphone : 375 */
-/*responsive*/
+
 *:not(h1) {
   font-family: Roboto;
 }
