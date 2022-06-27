@@ -175,7 +175,7 @@
         border-radius: 50%;
         @include center;
 
-        & i {
+        & .checkIcon {
             color: $color-tertiary;
         }
     }
@@ -212,6 +212,26 @@
     transform: scaleX(0);
     transition: transform 500ms;
 }
+
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.dishesCard {
+    &:active > .dishesCheck {
+        & > .dishesCheck__circle {
+        animation: rotate 700ms ease 0s;
+        }
+    }
+}
+
+
 
 
 /*

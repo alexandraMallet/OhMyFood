@@ -1,6 +1,8 @@
+
 footer {
     height: 200px;
-    background-color: darken($color: $color-background, $amount: 20%);
+    width: 100%;
+    background-color: darken($color: $color-background, $amount: 30%);
     color: white;
 
     h4 {
