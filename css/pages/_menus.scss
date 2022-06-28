@@ -1,10 +1,11 @@
-
 /*animation apparition des catégories de plats*/
+
 
 @keyframes progressDishes {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -69,6 +70,8 @@
 }
 
 
+
+
 .restNameMenu {
     display: flex;
     justify-content: space-around;
@@ -76,11 +79,62 @@
     padding-right: 40px;
     padding-top: 20px;
 
-    i {
+    /*animation icône like*/
+
+    .likeIcon {
+        @include center;
+        width: 70px;
+        position: relative;
         font-size: x-large;
-        padding-left: 30px;
+        cursor: pointer;
+
+        .likeIconWhite {
+            position: absolute;
+            top: 23px;
+            left: 23px;
+            z-index: 2;
+
+        }
+
+        .likeIconPink {
+            position: absolute;
+            top: 23px;
+            left: 23px;
+            @include gradientIcon;
+            transform: scale(0);
+        }
+
+        &:active>.likeIconWhite {
+            z-index: -2;
+        }
+
+        &:active>.likeIconPink {
+            animation: likeIcon 1s forwards;
+        }
+
+        @include desktop-only {
+            &:hover>.likeIconWhite {
+                z-index: -2;
+            }
+
+            &:hover>.likeIconPink {
+                animation: likeIcon 1s forwards;
+            }
+        }
+
+
+        @keyframes likeIcon {
+            0% {
+                transform: scale(0);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
     }
 }
+
 
 
 /*catégories*/
@@ -199,37 +253,37 @@
         transition: transform 500ms;
     }
 
-    &:active > .dishesCheck {
+    &:active>.dishesCheck {
         transform: scaleX(1);
     }
 
-    &:active > .dishesTxt {
+    &:active>.dishesTxt {
         width: calc(100% - 80px);
         cursor: pointer;
     }
 
     @include desktop-only {
-        &:hover > .dishesCheck {
+        &:hover>.dishesCheck {
             transform: scaleX(1);
             cursor: pointer;
         }
-    
-        &:hover > .dishesTxt {
+
+        &:hover>.dishesTxt {
             width: calc(100% - 80px);
             cursor: pointer;
         }
     }
 
-    &:active > .dishesCheck {
-        & > .dishesCheck__circle {
-        animation: rotate 700ms ease 0s;
+    &:active>.dishesCheck {
+        &>.dishesCheck__circle {
+            animation: rotate 700ms ease 0s;
         }
     }
 
     @include desktop-only {
-        &:hover > .dishesCheck {
-            & > .dishesCheck__circle {
-            animation: rotate 700ms ease 0s;
+        &:hover>.dishesCheck {
+            &>.dishesCheck__circle {
+                animation: rotate 700ms ease 0s;
             }
         }
     }
@@ -244,8 +298,8 @@
     from {
         transform: rotate(0deg);
     }
+
     to {
         transform: rotate(360deg);
     }
 }
-
